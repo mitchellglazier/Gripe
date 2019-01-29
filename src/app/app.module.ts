@@ -1,16 +1,16 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppComponent } from './app.component';
+import { GripeAppComponent } from './gripe-app.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    GripeAppComponent
   ],
   imports: [
     BrowserModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [GripeAppComponent]
 })
 export class AppModule { }
