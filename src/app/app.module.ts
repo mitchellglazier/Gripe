@@ -1,16 +1,23 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { GripeAppComponent } from './gripe-app.component';
+import { GripesAppComponent } from './gripes-app.component';
+import { GripesListComponent } from './gripes/gripes-list.component';
+import { GripeThumbnailComponent } from './gripes/grips-thumbnail.component';
+import { NavBarComponent } from './nav/navbar.component';
+
+
 
 @NgModule({
-  declarations: [
-    GripeAppComponent
-  ],
   imports: [
-    BrowserModule
+    BrowserModule,
   ],
-  providers: [],
-  bootstrap: [GripeAppComponent]
+  declarations: [
+    GripesAppComponent,
+    GripesListComponent,
+    GripeThumbnailComponent,
+    NavBarComponent
+  ],
+  bootstrap: [GripesAppComponent]
 })
 export class AppModule { }
