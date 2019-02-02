@@ -11,6 +11,7 @@ import { Component, Input } from '@angular/core';
     `,
     styles: [`
         .well div { color: #bbb; }
+        .thumbnail { min-height: 210px; }
     `]
 })
 export class GripeThumbnailComponent {
