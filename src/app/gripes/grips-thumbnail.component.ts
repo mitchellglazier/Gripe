@@ -1,14 +1,19 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
+    // tslint:disable-next-line:component-selector
     selector: 'gripe-thumbnail',
     template: `
     <div class="well hoverwell thumbnail">
         <h2>{{gripe.name}}</h2>
         <div>Date: {{gripe.date}}</div>
         <span>&nbsp;</span>
-        <div>Reference: {{gripe.reference}}</div>
-        <div>Tags: {{gripe.tags}}</div>
+        <div *ngIf="gripe.reference">
+            <div>Reference: {{gripe.reference}}</div>
+        </div>
+        <div *ngIf="gripe.tags">
+            <div>Tags: {{gripe.tags}}</div>
+        </div>
         <span>&nbsp;</span>
         <div>{{gripe.body}}</div>
     `,
@@ -18,6 +23,6 @@ import { Component, Input } from '@angular/core';
     `]
 })
 export class GripeThumbnailComponent {
-    @Input() gripe:any;
+    @Input() gripe: any;
 
 }

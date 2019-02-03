@@ -5,6 +5,7 @@ import { GripesAppComponent } from './gripes-app.component';
 import { GripesListComponent } from './gripes/gripes-list.component';
 import { GripeThumbnailComponent } from './gripes/grips-thumbnail.component';
 import { NavBarComponent } from './nav/navbar.component';
+import { GripesService } from './gripes/shared/gripes.service';
 
 
 
@@ -18,6 +19,7 @@ import { NavBarComponent } from './nav/navbar.component';
     GripeThumbnailComponent,
     NavBarComponent
   ],
+  providers: [GripesService],
   bootstrap: [GripesAppComponent]
 })
 export class AppModule { }
