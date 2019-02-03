@@ -7,6 +7,9 @@ import { Component, Input } from '@angular/core';
         <h2>{{gripe.name}}</h2>
         <div>Date: {{gripe.date}}</div>
         <span>&nbsp;</span>
+        <div>Reference: {{gripe.reference}}</div>
+        <div>Tags: {{gripe.tags}}</div>
+        <span>&nbsp;</span>
         <div>{{gripe.body}}</div>
     `,
     styles: [`
