@@ -1,15 +1,23 @@
 import { Routes } from '@angular/router';
-import { GripeDetailsComponent } from './gripes/gripe-details/gripe-details.component';
-import { GripesListComponent } from './gripes/gripes-list.component';
-import { CreateGripeComponent } from './gripes/create-gripe.component';
+import {
+    GripesListComponent,
+    GripeDetailsComponent,
+    CreateGripeComponent,
+    GripeRouteActivator,
+    GripeListResolver
+} from './gripes/index'
+
 import { Error404Component } from './errors/404.components';
-import { GripeRouteActivator } from './gripes/gripe-details/gripe-route-activator.service';
+
 
 export const appRoutes: Routes = [
-    { path: 'gripes/new', component: CreateGripeComponent},
-    { path: 'gripes', component: GripesListComponent },
+    { path: 'gripes/new', component: CreateGripeComponent,
+        canDeactivate: ['canDeactivateCreateGripe'] },
+    { path: 'gripes', component: GripesListComponent,
+        resolve: {gripes: GripeListResolver} },
     { path: 'gripes/:id', component: GripeDetailsComponent,
         canActivate: [GripeRouteActivator] },
     { path: '404', component: Error404Component },
-    { path: '', redirectTo: '/gripes', pathMatch: 'full' }
+    { path: '', redirectTo: '/gripes', pathMatch: 'full' },
+    { path: 'user', loadChildren: './user/user.module#UserModule'}
 ];

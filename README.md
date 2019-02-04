@@ -1,6 +1,6 @@
 # Gripe
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.3.
+Gripe: "express a complaint or grumble about something, especially something trivial."
 
 ## Development server
 

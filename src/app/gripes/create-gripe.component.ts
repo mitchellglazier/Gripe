@@ -15,6 +15,7 @@ import { Router } from '@angular/router';
     `
 })
 export class CreateGripeComponent {
+    isDirty:boolean = true;
     constructor(private router: Router) {
 
     }

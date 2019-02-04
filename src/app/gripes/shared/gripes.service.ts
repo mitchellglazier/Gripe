@@ -1,9 +1,12 @@
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 
 @Injectable()
 export class GripesService {
     getGripes() {
-        return GRIPES;
+       let subject = new Subject()
+       setTimeout(() => {subject.next(GRIPES); subject.complete(); }, 100)
+        return subject;
     }
     getGripe(id: number) {
       return GRIPES.find(gripe => gripe.id === id);

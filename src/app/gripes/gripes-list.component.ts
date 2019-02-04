@@ -1,3 +1,4 @@
+import { ActivatedRoute } from '@angular/router';
 import { ToastrService } from './../common/toastr.service';
 import { Component, OnInit } from '@angular/core';
 import { GripesService } from './shared/gripes.service';
@@ -21,12 +22,13 @@ declare let toastr;
 export class GripesListComponent implements OnInit {
     gripes: any[];
 
-    constructor(private gripesService: GripesService, private toastr: ToastrService) {
+    constructor(private gripesService: GripesService, private toastr: ToastrService,
+        private route: ActivatedRoute) {
 
     }
 
     ngOnInit() {
-        this.gripes = this.gripesService.getGripes();
+        this.gripes = this.route.snapshot.data['gripes'];
     }
 
     handleThumbnailClick(gripeName) {
