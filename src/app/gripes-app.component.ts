@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'gripes-app',
   template: `
   <nav-bar></nav-bar>
-  <gripes-list></gripes-list>
+  <router-outlet></router-outlet>
   `
 })
 export class GripesAppComponent {

@@ -5,6 +5,9 @@ export class GripesService {
     getGripes() {
         return GRIPES;
     }
+    getGripe(id: number) {
+      return GRIPES.find(gripe => gripe.id === id);
+    }
 }
 
 const GRIPES = [

@@ -5,8 +5,6 @@ import { GripesService } from './shared/gripes.service';
 declare let toastr;
 
 @Component({
-  // tslint:disable-next-line:component-selector
-  selector: 'gripes-list',
   template: `
     <div>
         <h1>What Do You Want To Gripe About?</h1>
