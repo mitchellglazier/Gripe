@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 
 @Component({
     template: `
-    <h1>New Gripe</h1>
+    <h1>What Do You Want To Gripe About?</h1>
     <hr>
     <div class="col-md-6">
         <h3>[Create Gripe Form will go here]</h3>

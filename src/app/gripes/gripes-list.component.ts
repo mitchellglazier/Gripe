@@ -2,13 +2,14 @@ import { ActivatedRoute } from '@angular/router';
 import { ToastrService } from './../common/toastr.service';
 import { Component, OnInit } from '@angular/core';
 import { GripesService } from './shared/gripes.service';
+import { IGripe } from './shared/index';
 
 declare let toastr;
 
 @Component({
   template: `
     <div>
-        <h1>What Do You Want To Gripe About?</h1>
+        <h1>What Are People Griping About?</h1>
         <hr />
         <div class="row">
             <div *ngFor="let gripe of gripes" class="col-md-5">
@@ -20,7 +21,7 @@ declare let toastr;
     `
 })
 export class GripesListComponent implements OnInit {
-    gripes: any[];
+    gripes: IGripe[];
 
     constructor(private gripesService: GripesService, private toastr: ToastrService,
         private route: ActivatedRoute) {

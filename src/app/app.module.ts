@@ -1,3 +1,4 @@
+import { AuthService } from './user/auth.service';
 import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -37,6 +38,7 @@ import { ToastrService } from './common/toastr.service';
     ToastrService,
     GripeRouteActivator,
     GripeListResolver,
+    AuthService,
     {
       provide: 'canDeactivateCreateGripe',
       useValue: checkDirtyState

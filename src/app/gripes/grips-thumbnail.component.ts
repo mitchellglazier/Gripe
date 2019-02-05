@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { IGripe } from './shared/index';
 
 @Component({
     // tslint:disable-next-line:component-selector
@@ -23,6 +24,6 @@ import { Component, Input } from '@angular/core';
     `]
 })
 export class GripeThumbnailComponent {
-    @Input() gripe: any;
+    @Input() gripe: IGripe;
 
 }

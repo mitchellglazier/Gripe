@@ -1,6 +1,7 @@
 import { GripesService } from './../shared/gripes.service';
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { IGripe } from '../shared/index';
 
 @Component({
     templateUrl: './gripe-details.component.html',
@@ -9,7 +10,7 @@ import { ActivatedRoute } from '@angular/router';
     `]
 })
 export class GripeDetailsComponent {
-    gripe: any;
+    gripe: IGripe
 
     constructor (private gripesService: GripesService, private route: ActivatedRoute) {
 
