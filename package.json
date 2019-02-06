@@ -47,5 +47,17 @@
     "ts-node": "~7.0.0",
     "tslint": "~5.11.0",
     "typescript": "~3.2.2"
-  }
+  },
+  "description": "Gripe: \"express a complaint or grumble about something, especially something trivial.\"",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mitchellglazier/Gripe.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mitchellglazier/Gripe/issues"
+  },
+  "homepage": "https://github.com/mitchellglazier/Gripe#readme"
 }
