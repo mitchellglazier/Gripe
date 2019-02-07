@@ -1,0 +1,38 @@
+<h1>New Gripe</h1>
+<hr>
+<div class="col-md-6">
+  <form #newGripeForm="ngForm" (ngSubmit)="saveGripe(newGripeForm.value)" autocomplete="off" novalidate>
+
+    <div class="form-group" [ngClass]="{'error': newGripeForm.controls.name?.invalid && newGripeForm.controls.name.touched}">
+      <label for="gripeName">Gripe Name:</label>
+      <em *ngIf="newGripeForm.controls.name?.invalid && (newGripeForm.controls.name?.touched)">Required</em>
+      <input (ngModel)="newGripe.name" name="name" required id="name" type="text" class="form-control" placeholder="Name of your Gripe..." />
+    </div>
+
+    <div class="form-group" [ngClass]="{'error': newGripeForm.controls.date?.invalid && newGripeForm.controls.date?.touched}">
+      <label for="gripeDate">Gripe Date:</label>
+      <em *ngIf="newGripeForm.controls.date?.invalid && (newGripeForm.controls.date?.touched)">Required</em>
+      <input (ngModel)="newGripe.date" name="date" required id="gripeDate" type="text" class="form-control" placeholder="format (mm/dd/yyyy)..." />
+    </div>
+    
+    <div class="form-group">
+        <label for="reference">Reference Url:</label>
+        <input (ngModel)="newGripe.reference" name="reference" id="reference" type="text" class="form-control" placeholder="Reference Url..." />
+      </div>
+    
+    <div class="form-group" [ngClass]="{'error': newGripeForm.controls.tags?.invalid && newGripeForm.controls.tags?.touched}">
+      <label for="gripeTags">Tags:</label>
+      <em *ngIf="newGripeForm.controls.tags?.invalid && (newGripeForm.controls.tags?.touched)">Required</em>
+      <input (ngModel)="newGripe.tags" name="tags" required id="gripeTags" type="text" class="form-control" placeholder="Hash Tags..." />
+    </div>
+
+    <div class="form-group" [ngClass]="{'error': newGripeForm.controls.body?.invalid && newGripeForm.controls.body?.touched}">
+      <label for="gripeBody">Body:</label>
+      <em *ngIf="newGripeForm.controls.body?.invalid && (newGripeForm.controls.body?.touched)">Required</em>
+      <input (ngModel)="newGripe.body" name="body" required id="gripeBody" type="text" class="form-control" placeholder="Get to griping...." />
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Save</button>
+    <button type="button" [disabled]="newGripeForm.invalid" class="btn btn-default" (click)="cancel()">Cancel</button>
+  </form>
+</div>

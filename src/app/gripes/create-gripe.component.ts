@@ -2,23 +2,27 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-    template: `
-    <h1>What Do You Want To Gripe About?</h1>
-    <hr>
-    <div class="col-md-6">
-        <h3>[Create Gripe Form will go here]</h3>
-        <br/>
-        <br/>
-        <button type="submit" class="btn btn-primary">Save</button>
-        <button type="button" class="btn btn-default" (click)="cancel()">Cancel</button>
-    </div>
-    `
+    templateUrl: 'create-gripe.component.html',
+    styles: [`
+    em { float: right; color: #E05C65; padding-left: 10px;}
+    .error input {background-color:#E3C3C5;}
+    .error ::-webkit-input-placeholder { color: #999; }
+    .error ::-moz-placeholder { color: #999; }
+    .error ::-moz-placeholder { color: #999; }
+    .error :ms-input-placeholder { color: #999; }
+  `]
 })
 export class CreateGripeComponent {
+    newGripe
     isDirty:boolean = true;
     constructor(private router: Router) {
 
     }
+
+    saveGripe(formValues) {
+        console.log(formValues)
+    }
+
     cancel() {
         this.router.navigate(['/gripes']);
     }
