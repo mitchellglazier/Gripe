@@ -1,4 +1,4 @@
-<h1>New Gripe</h1>
+<h1>Go Ahead, Gripe Away!</h1>
 <hr>
 <div class="col-md-6">
   <form #newGripeForm="ngForm" (ngSubmit)="saveGripe(newGripeForm.value)" autocomplete="off" novalidate>
@@ -23,7 +23,7 @@
     <div class="form-group" [ngClass]="{'error': newGripeForm.controls.body?.invalid && newGripeForm.controls.body?.touched}">
       <label for="gripeBody">Body:</label>
       <em *ngIf="newGripeForm.controls.body?.invalid && (newGripeForm.controls.body?.touched)">Required</em>
-      <input (ngModel)="newGripe.body" name="body" required id="gripeBody" type="text" class="form-control" placeholder="Get to griping...." />
+      <textarea rows=3 (ngModel)="newGripe.body" name="body" required id="gripeBody" type="text" class="form-control" placeholder="Get to griping...."></textarea>
     </div>
     <button type="submit" [disabled]="newGripeForm.invalid" class="btn btn-primary">Save</button>
     <button type="button" class="btn btn-default" (click)="cancel()">Cancel</button>
