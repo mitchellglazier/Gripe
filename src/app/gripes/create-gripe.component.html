@@ -20,10 +20,9 @@
         <input (ngModel)="newGripe.reference" name="reference" id="reference" type="text" class="form-control" placeholder="Reference Url..." />
       </div>
     
-    <div class="form-group" [ngClass]="{'error': newGripeForm.controls.tags?.invalid && newGripeForm.controls.tags?.touched}">
+    <div class="form-group">
       <label for="gripeTags">Tags:</label>
-      <em *ngIf="newGripeForm.controls.tags?.invalid && (newGripeForm.controls.tags?.touched)">Required</em>
-      <input (ngModel)="newGripe.tags" name="tags" required id="gripeTags" type="text" class="form-control" placeholder="Hash Tags..." />
+      <input (ngModel)="newGripe.tags" name="tags" id="gripeTags" type="text" class="form-control" placeholder="Hash Tags..." />
     </div>
 
     <div class="form-group" [ngClass]="{'error': newGripeForm.controls.body?.invalid && newGripeForm.controls.body?.touched}">
@@ -32,7 +31,7 @@
       <input (ngModel)="newGripe.body" name="body" required id="gripeBody" type="text" class="form-control" placeholder="Get to griping...." />
     </div>
     
-    <button type="submit" class="btn btn-primary">Save</button>
-    <button type="button" [disabled]="newGripeForm.invalid" class="btn btn-default" (click)="cancel()">Cancel</button>
+    <button type="submit" [disabled]="newGripeForm.invalid" class="btn btn-primary">Save</button>
+    <button type="button" class="btn btn-default" (click)="cancel()">Cancel</button>
   </form>
 </div>

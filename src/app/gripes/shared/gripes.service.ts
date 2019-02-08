@@ -12,6 +12,12 @@ export class GripesService {
     getGripe(id: number): IGripe {
       return GRIPES.find(gripe => gripe.id === id);
     }
+
+    saveGripe(gripe) {
+       gripe.id = 999;
+       gripe.session = [];
+       GRIPES.push(gripe);
+    }
 }
 
 const GRIPES: IGripe[] = [

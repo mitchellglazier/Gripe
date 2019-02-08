@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { GripesService } from './shared/index';
 
 @Component({
     templateUrl: 'create-gripe.component.html',
@@ -15,12 +16,15 @@ import { Router } from '@angular/router';
 export class CreateGripeComponent {
     newGripe
     isDirty:boolean = true;
-    constructor(private router: Router) {
+    constructor(private router: Router,
+        private gripesService: GripesService) {
 
     }
 
     saveGripe(formValues) {
-        console.log(formValues)
+        this.gripesService.saveGripe(formValues);
+        this.isDirty = false;
+        this.router.navigate(['/gripes']);
     }
 
     cancel() {
