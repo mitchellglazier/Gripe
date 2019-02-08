@@ -15,7 +15,7 @@ export class GripesService {
 
     saveGripe(gripe) {
        gripe.id = 999;
-       gripe.session = [];
+       gripe.comment = [];
        GRIPES.push(gripe);
     }
 }

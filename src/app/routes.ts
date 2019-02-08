@@ -4,7 +4,8 @@ import {
     GripeDetailsComponent,
     CreateGripeComponent,
     GripeRouteActivator,
-    GripeListResolver
+    GripeListResolver,
+    CreateCommentComponent,
 } from './gripes/index'
 
 import { Error404Component } from './errors/404.components';
@@ -17,6 +18,7 @@ export const appRoutes: Routes = [
         resolve: {gripes: GripeListResolver} },
     { path: 'gripes/:id', component: GripeDetailsComponent,
         canActivate: [GripeRouteActivator] },
+    { path: 'gripes/comment/new', component: CreateCommentComponent },
     { path: '404', component: Error404Component },
     { path: '', redirectTo: '/gripes', pathMatch: 'full' },
     { path: 'user', loadChildren: './user/user.module#UserModule'}
