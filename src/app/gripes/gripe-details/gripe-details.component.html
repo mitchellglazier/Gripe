@@ -15,4 +15,21 @@
         <div>{{gripe?.body}}<br />
       </div>
     </div>
+
+    <hr>
+
+    <div class="row">
+      <div class="col-md-2">
+        <h3 style="margin:0">Comments</h3>
+      </div>
+
+      <div class="col-md-2">
+        <a (click)="addComment()">Add Comment</a>
+      </div>
+    </div>
+
+    <comment-list *ngIf="!addMode" [comments]="gripe?.comment"></comment-list>
+    <create-comment *ngIf="addMode" (saveNewComment)= "saveNewComment($event)"
+    (cancelAddComment)="cancelAddComment()"></create-comment>
+
   </div>

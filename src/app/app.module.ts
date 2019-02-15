@@ -13,6 +13,7 @@ import {
   GripeRouteActivator,
   GripeListResolver,
   CreateCommentComponent,
+  CommentListComponent,
 } from './gripes/index';
 
 import { appRoutes } from './routes';
@@ -37,6 +38,7 @@ import { ToastrService } from './common/toastr.service';
     CreateGripeComponent,
     Error404Component,
     CreateCommentComponent,
+    CommentListComponent,
   ],
   providers: [
     GripesService,

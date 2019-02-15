@@ -1,0 +1,11 @@
+<div class="row" *ngFor="let comment of comments">
+    <div class="col-md-10">
+      <div class="well">
+          <h4>{{comment.name}}</h4>
+          <h6>{{comment.date}}</h6>
+          <span>Reference: {{comment.reference}}</span><br />
+          <span>Tags: {{comment.tags}}</span>
+          <p>{{comment.body}}</p>
+      </div>
+    </div>
+  </div>

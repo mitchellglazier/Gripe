@@ -18,6 +18,11 @@ export class GripesService {
        gripe.comment = [];
        GRIPES.push(gripe);
     }
+
+    updateGripe(gripe) {
+       let index = GRIPES.findIndex(x => x.id = gripe.id);
+       GRIPES[index] = gripe;
+    }
 }
 
 const GRIPES: IGripe[] = [
@@ -26,7 +31,17 @@ const GRIPES: IGripe[] = [
    name: 'Learning new languages sucks',
    date: new Date('02/01/2019'),
    reference: 'www.google.gom',
-   body: 'Learning new languages sucks and its really slow, but what can you do?'
+   body: 'Learning new languages sucks and its really slow, but what can you do?',
+   comment: [
+      {
+         id: 1,
+         name: 'Angular',
+         date: '02/01/2019',
+         reference: 'www.google/com',
+         tags: '#helloworld',
+         body: 'hello hello'
+      }
+   ]
 },
 {
    id: 2,
@@ -35,7 +50,16 @@ const GRIPES: IGripe[] = [
    reference: 'www.espn.gom',
    tags: '#comcast #angular',
    // tslint:disable-next-line:max-line-length
-   body: 'I swear I have been on hold for hours and hours and hours... What am i supposed to do. I really dont think I have any opetions at this point.'
+   body: 'I swear I have been on hold for hours and hours and hours... What am i supposed to do. I really dont think I have any opetions at this point.',
+   comment: [
+      {
+         id: 1,
+         name: 'Angular',
+         date: ('02/01/2019'),
+         reference: 'www.google/com',
+         body: 'hello hello'
+      }
+   ]
 },
 {
    id: 3,
@@ -43,14 +67,32 @@ const GRIPES: IGripe[] = [
    date: new Date('12/30/2018'),
    reference: 'www.yahoo.gom',
    tags: '#mitchellglazier #angular',
-   body: 'You cant eat out every day but home food every day isnt great either. Balance is nice.'
+   body: 'You cant eat out every day but home food every day isnt great either. Balance is nice.',
+   comment: [
+      {
+         id: 1,
+         name: 'Angular',
+         date: '02/01/2019',
+         reference: 'www.google/com',
+         body: 'hello hello'
+      }
+   ]
 },
 {
    id: 4,
    name: 'Blah blah blah',
    date: new Date('01/01/2019'),
    tags: '#facebooksucks #angry',
-   body: 'Today is my bday, what a wonderful day!'
+   body: 'Today is my bday, what a wonderful day!',
+   comment: [
+      {
+         id: 1,
+         name: 'Angular',
+         date: '02/01/2019',
+         reference: 'www.google/com',
+         body: 'hello hello'
+      }
+   ]
 },
 {
    id: 5,
@@ -58,7 +100,16 @@ const GRIPES: IGripe[] = [
    date: new Date('07/24/2017'),
    reference: 'www.linkedin.gom',
    tags: '#glazierbros #mattlabrum',
-   body: 'It really amazes me that no one considers Lebron the greatest of all time.'
+   body: 'It really amazes me that no one considers Lebron the greatest of all time.',
+   comment: [
+      {
+         id: 1,
+         name: 'Angular',
+         date: '02/01/2019',
+         reference: 'www.google/com',
+         body: 'hello hello'
+      }
+   ]
 },
 {
    id: 6,
@@ -66,5 +117,14 @@ const GRIPES: IGripe[] = [
    date: new Date('08/24/1988'),
    reference: 'www.indeed.gom',
    tags: '#carlos #lakers',
-   body: 'Yea they probably are'
+   body: 'Yea they probably are',
+   comment: [
+      {
+         id: 1,
+         name: 'Angular',
+         date: '02/01/2019',
+         reference: 'www.google/com',
+         body: 'hello hello'
+      }
+   ]
 }];

@@ -1,16 +1,19 @@
 import { GripesService } from './../shared/gripes.service';
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { IGripe } from '../shared/index';
+import { IGripe, IComment } from '../shared/index';
+import { CommentStmt } from '@angular/compiler';
 
 @Component({
     templateUrl: './gripe-details.component.html',
     styles: [`
         .container { padding-left:20px; padding-right: 20px; }
+        a { cursor:pointer }
     `]
 })
 export class GripeDetailsComponent {
-    gripe: IGripe
+    gripe: IGripe;
+    addMode: boolean;
 
     constructor (private gripesService: GripesService, private route: ActivatedRoute) {
 
@@ -19,6 +22,22 @@ export class GripeDetailsComponent {
     ngOnInit() {
         this.gripe = this.gripesService.getGripe(
             +this.route.snapshot.params['id']);
+    }
+
+    addComment() {
+        this.addMode = true;
+    }
+
+    saveNewComment(comment: IComment) {
+        const nextId = Math.max.apply(null, this.gripe.comment.map( c => c.id));
+        comment.id = nextId + 1;
+        this.gripe.comment.push(comment);
+        this.gripesService.updateGripe(this.gripe);
+        this.addMode = false;
+    }
+
+    cancelAddComment() {
+        this.addMode = false;
     }
 
 }

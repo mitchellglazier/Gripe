@@ -10,6 +10,6 @@ export class GripeListResolver implements Resolve<any> {
     }
 
     resolve() {
-        return this.gripesService.getGripes().pipe(map(events => events));
+        return this.gripesService.getGripes().pipe(map(gripes => gripes));
     }
 }

@@ -20,7 +20,10 @@ import { IGripe } from './shared/index';
     `,
     styles: [`
         .well div { color: #bbb; }
-        .thumbnail { min-height: 210px; }
+        .thumbnail {
+            min-height: 290px;
+            max-height: 290px;
+        }
     `]
 })
 export class GripeThumbnailComponent {
