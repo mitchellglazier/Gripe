@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Subject, Observable } from 'rxjs';
 import { IGripe } from './gripes.model';
+import { visitRootRenderNodes } from '@angular/core/src/view/util';
 
 @Injectable()
 export class GripesService {
@@ -28,7 +29,7 @@ export class GripesService {
 const GRIPES: IGripe[] = [
     {
    id: 1,
-   name: 'Learning new languages sucks',
+   name: 'Learning new frameworks sucks',
    date: new Date('02/01/2019'),
    reference: 'www.google.gom',
    body: 'Learning new languages sucks and its really slow, but what can you do?',
@@ -36,10 +37,27 @@ const GRIPES: IGripe[] = [
       {
          id: 1,
          name: 'Angular',
-         date: '02/01/2019',
-         reference: 'www.google/com',
+         date: new Date('02/01/2019'),
+         reference: 'www.angular.com',
          tags: '#helloworld',
-         body: 'hello hello'
+         body: 'hello hello',
+         voters: ['peck', 'roy', 'joe', 'ju']
+      },
+      {
+         id: 2,
+         name: 'React',
+         date: new Date('02/01/2019'),
+         tags: '#hellomars',
+         body: 'bye bye',
+         voters: ['roy', 'joe', 'ju']
+      },
+      {
+         id: 3,
+         name: 'Rails',
+         date: new Date('02/01/2019'),
+         reference: 'www.rails.com',
+         body: 'bye bye',
+         voters: ['roy', 'joe', 'ju']
       }
    ]
 },
@@ -55,9 +73,10 @@ const GRIPES: IGripe[] = [
       {
          id: 1,
          name: 'Angular',
-         date: ('02/01/2019'),
-         reference: 'www.google/com',
-         body: 'hello hello'
+         date: new Date('02/01/2019'),
+         reference: 'www.google/.com',
+         body: 'hello hello',
+         voters: ['peck', 'roy', 'joe', 'ju']
       }
    ]
 },
@@ -72,9 +91,10 @@ const GRIPES: IGripe[] = [
       {
          id: 1,
          name: 'Angular',
-         date: '02/01/2019',
-         reference: 'www.google/com',
-         body: 'hello hello'
+         date: new Date('02/01/2019'),
+         reference: 'www.google.com',
+         body: 'hello hello',
+         voters: ['peck', 'roy']
       }
    ]
 },
@@ -88,9 +108,10 @@ const GRIPES: IGripe[] = [
       {
          id: 1,
          name: 'Angular',
-         date: '02/01/2019',
+         date: new Date('02/01/2019'),
          reference: 'www.google/com',
-         body: 'hello hello'
+         body: 'hello hello',
+         voters: ['peck', 'roy', 'joe', 'ju', 'dans']
       }
    ]
 },
@@ -105,9 +126,10 @@ const GRIPES: IGripe[] = [
       {
          id: 1,
          name: 'Angular',
-         date: '02/01/2019',
+         date: new Date('02/01/2019'),
          reference: 'www.google/com',
-         body: 'hello hello'
+         body: 'hello hello',
+         voters: ['peck', 'roy', 'joe'],
       }
    ]
 },
@@ -122,9 +144,10 @@ const GRIPES: IGripe[] = [
       {
          id: 1,
          name: 'Angular',
-         date: '02/01/2019',
+         date: new Date('02/01/2019'),
          reference: 'www.google/com',
-         body: 'hello hello'
+         body: 'hello hello',
+         voters: ['peck', 'roy', 'joe', 'ju', 'esus'],
       }
    ]
 }];

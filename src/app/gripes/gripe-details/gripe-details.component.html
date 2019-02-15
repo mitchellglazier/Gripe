@@ -3,13 +3,13 @@
   
     <div class="row">
       <div class="col-md-11">
-        <h2>{{gripe?.name}} </h2>
+        <h2>{{gripe?.name | uppercase}} </h2>
       </div>
     </div>
   
     <div class="row">
       <div class="col-md-6">
-        <div><strong>Date:</strong> {{gripe?.date}}</div>
+        <div><strong>Date:</strong> {{gripe?.date | date:'short'}}</div>
         <div *ngIf="gripe.tags"><strong>Tags:</strong> {{gripe?.tags}}</div>
         <span>&nbsp;</span>
         <div>{{gripe?.body}}<br />

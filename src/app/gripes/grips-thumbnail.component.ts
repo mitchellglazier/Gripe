@@ -6,8 +6,8 @@ import { IGripe } from './shared/index';
     selector: 'gripe-thumbnail',
     template: `
     <div [routerLink]="['/gripes', gripe.id]" class="well hoverwell thumbnail">
-        <h2>{{gripe.name}}</h2>
-        <div>Date: {{gripe.date}}</div>
+        <h2>{{gripe.name | uppercase}}</h2>
+        <div>Date: {{gripe.date | date:'short'}}</div>
         <span>&nbsp;</span>
         <div *ngIf="gripe.reference">
             <div>Reference: {{gripe.reference}}</div>
