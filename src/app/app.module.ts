@@ -21,6 +21,7 @@ import { GripesAppComponent } from './gripes-app.component';
 import { NavBarComponent } from './nav/navbar.component';
 import { Error404Component } from './errors/404.components';
 import { ToastrService } from './common/toastr.service';
+import { CollapsibleWellComponent } from './common/callapsible-well.component';
 
 @NgModule({
   imports: [
@@ -39,6 +40,7 @@ import { ToastrService } from './common/toastr.service';
     Error404Component,
     CreateCommentComponent,
     CommentListComponent,
+    CollapsibleWellComponent,
   ],
   providers: [
     GripesService,
