@@ -1,6 +1,6 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 import { Subject, Observable } from 'rxjs';
-import { IGripe } from './gripes.model';
+import { IGripe, IComment } from './gripes.model';
 import { visitRootRenderNodes } from '@angular/core/src/view/util';
 
 @Injectable()
@@ -23,6 +23,27 @@ export class GripesService {
     updateGripe(gripe) {
        let index = GRIPES.findIndex(x => x.id = gripe.id);
        GRIPES[index] = gripe;
+    }
+
+    searchTags(searchTerm: string) {
+       let term = searchTerm.toLocaleLowerCase();
+       let results: IComment[] = [];
+
+       GRIPES.forEach(gripe => {
+          let matchingTags = gripe.comment.filter(comment =>
+            comment.name.toLocaleLowerCase().indexOf(term) > -1);
+         matchingTags = matchingTags.map ((comment: any) => {
+            comment.gripeId = gripe.id;
+            return comment;
+         });
+         results = results.concat(matchingTags);
+       });
+
+       let emitter = new EventEmitter(true);
+       setTimeout(() => {
+          emitter.emit(results);
+       }, 100);
+       return emitter;
     }
 }
 

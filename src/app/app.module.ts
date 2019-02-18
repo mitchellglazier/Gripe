@@ -20,10 +20,15 @@ import { appRoutes } from './routes';
 import { GripesAppComponent } from './gripes-app.component';
 import { NavBarComponent } from './nav/navbar.component';
 import { Error404Component } from './errors/404.components';
-import { TOASTR_TOKEN, Toastr } from './common/toastr.service';
-import { CollapsibleWellComponent } from './common/callapsible-well.component';
+import { JQ_TOKEN,
+  TOASTR_TOKEN,
+  Toastr,
+  CollapsibleWellComponent,
+  SimpleModalComponent,
+  ModalTriggerDirective } from './common/index';
 
-declare let toastr: Toastr;
+const toastr: Toastr = window['toastr'];
+const jQuery = window['$'];
 
 @NgModule({
   imports: [
@@ -43,10 +48,13 @@ declare let toastr: Toastr;
     CreateCommentComponent,
     CommentListComponent,
     CollapsibleWellComponent,
+    SimpleModalComponent,
+    ModalTriggerDirective,
   ],
   providers: [
     GripesService,
     { provide: TOASTR_TOKEN, useValue: toastr },
+    { provide: JQ_TOKEN, useValue: jQuery },
     GripeRouteActivator,
     GripeListResolver,
     AuthService,

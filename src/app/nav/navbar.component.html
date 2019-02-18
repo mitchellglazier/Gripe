@@ -34,11 +34,11 @@
             </li>
           </ul>
         </div>
-        <form id="searchForm"  class="navbar-form navbar-right"  >
+        <form id="searchForm" (ngSubmit)="searchTags(searchTerm)" class="navbar-form navbar-right"  >
           <div class="form-group">
-            <input type="text" class="form-control" placeholder="Search Gripes" >
+            <input [(ngModel)]="searchTerm" name="searchTerm" type="text" class="form-control" placeholder="Search Gripes" >
           </div>
-          <button class="btn btn-default" >
+          <button class="btn btn-default" modal-trigger>
             Search
           </button>
         </form>
@@ -46,3 +46,10 @@
     </div>
   </div>
   
+  <simple-modal title="Matching Comments">
+    <div class="list-group">
+      <a class="list-group-item" *ngFor="let comment of
+      foundComments" [routerLink]="['/gripes', comment.gripeId]">{{comment.name}}
+      </a>
+    </div>
+  </simple-modal>
