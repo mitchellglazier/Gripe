@@ -1,5 +1,4 @@
 import { ActivatedRoute } from '@angular/router';
-import { ToastrService } from './../common/toastr.service';
 import { Component, OnInit } from '@angular/core';
 import { GripesService } from './shared/gripes.service';
 import { IGripe } from './shared/index';
@@ -13,8 +12,7 @@ declare let toastr;
         <hr />
         <div class="row">
             <div *ngFor="let gripe of gripes" class="col-md-5">
-                <gripe-thumbnail (click)="handleThumbnailClick(gripe.name)" [gripe]
-                ="gripe"></gripe-thumbnail>
+                <gripe-thumbnail [gripe]="gripe"></gripe-thumbnail>
             </div>
         </div>
     </div>
@@ -23,8 +21,7 @@ declare let toastr;
 export class GripesListComponent implements OnInit {
     gripes: IGripe[];
 
-    constructor(private gripesService: GripesService, private toastr: ToastrService,
-        private route: ActivatedRoute) {
+    constructor(private gripesService: GripesService, private route: ActivatedRoute) {
 
     }
 
@@ -32,7 +29,4 @@ export class GripesListComponent implements OnInit {
         this.gripes = this.route.snapshot.data['gripes'];
     }
 
-    handleThumbnailClick(gripeName) {
-        this.toastr.success(gripeName);
-    }
 }

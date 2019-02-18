@@ -20,8 +20,10 @@ import { appRoutes } from './routes';
 import { GripesAppComponent } from './gripes-app.component';
 import { NavBarComponent } from './nav/navbar.component';
 import { Error404Component } from './errors/404.components';
-import { ToastrService } from './common/toastr.service';
+import { TOASTR_TOKEN, Toastr } from './common/toastr.service';
 import { CollapsibleWellComponent } from './common/callapsible-well.component';
+
+declare let toastr: Toastr;
 
 @NgModule({
   imports: [
@@ -44,7 +46,7 @@ import { CollapsibleWellComponent } from './common/callapsible-well.component';
   ],
   providers: [
     GripesService,
-    ToastrService,
+    { provide: TOASTR_TOKEN, useValue: toastr },
     GripeRouteActivator,
     GripeListResolver,
     AuthService,
