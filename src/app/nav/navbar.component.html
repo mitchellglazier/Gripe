@@ -36,9 +36,9 @@
         </div>
         <form id="searchForm" (ngSubmit)="searchTags(searchTerm)" class="navbar-form navbar-right"  >
           <div class="form-group">
-            <input [(ngModel)]="searchTerm" name="searchTerm" type="text" class="form-control" placeholder="Search Gripes" >
+            <input [(ngModel)]="searchTerm" name="searchTerm" type="text" class="form-control" placeholder="Search Hashtags" >
           </div>
-          <button class="btn btn-default" modal-trigger>
+          <button class="btn btn-default" modal-trigger="searchResults">
             Search
           </button>
         </form>
@@ -46,7 +46,7 @@
     </div>
   </div>
   
-  <simple-modal title="Matching Comments">
+  <simple-modal CloseOnBodyClick='true' elementId="searchResults" title="Matching Comments">
     <div class="list-group">
       <a class="list-group-item" *ngFor="let comment of
       foundComments" [routerLink]="['/gripes', comment.gripeId]">{{comment.name}}

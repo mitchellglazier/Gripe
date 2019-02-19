@@ -1,6 +1,6 @@
 import { GripesService } from './../shared/gripes.service';
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Params } from '@angular/router';
 import { IGripe, IComment } from '../shared/index';
 import { CommentStmt } from '@angular/compiler';
 
@@ -20,8 +20,10 @@ export class GripeDetailsComponent {
     }
 
     ngOnInit() {
-        this.gripe = this.gripesService.getGripe(
-            +this.route.snapshot.params['id']);
+        this.route.params.forEach((params: Params) => {
+            this.gripe = this.gripesService.getGripe(+params['id']);
+            this.addMode = false;
+        });
     }
 
     addComment() {

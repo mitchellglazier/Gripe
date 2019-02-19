@@ -13,7 +13,7 @@ export interface IComment {
     name: string;
     date: Date;
     reference?: string;
-    tags?: string;
+    tags: string;
     body: string;
     voters: string[];
 }

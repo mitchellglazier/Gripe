@@ -14,6 +14,8 @@ import {
   GripeListResolver,
   CreateCommentComponent,
   CommentListComponent,
+  UpvoteComponent,
+  VoterService,
 } from './gripes/index';
 
 import { appRoutes } from './routes';
@@ -49,6 +51,7 @@ const jQuery = window['$'];
     CommentListComponent,
     CollapsibleWellComponent,
     SimpleModalComponent,
+    UpvoteComponent,
     ModalTriggerDirective,
   ],
   providers: [
@@ -58,6 +61,7 @@ const jQuery = window['$'];
     GripeRouteActivator,
     GripeListResolver,
     AuthService,
+    VoterService,
     {
       provide: 'canDeactivateCreateGripe',
       useValue: checkDirtyState

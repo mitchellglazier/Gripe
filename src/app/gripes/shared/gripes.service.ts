@@ -31,7 +31,7 @@ export class GripesService {
 
        GRIPES.forEach(gripe => {
           let matchingTags = gripe.comment.filter(comment =>
-            comment.name.toLocaleLowerCase().indexOf(term) > -1);
+            comment.tags.toLocaleLowerCase().indexOf(term) > -1);
          matchingTags = matchingTags.map ((comment: any) => {
             comment.gripeId = gripe.id;
             return comment;
@@ -77,6 +77,7 @@ const GRIPES: IGripe[] = [
          name: 'Rails',
          date: new Date('02/01/2019'),
          reference: 'www.rails.com',
+         tags: '#yoyo',
          body: 'bye bye',
          voters: ['roy', 'joe', 'ju']
       }
@@ -96,6 +97,7 @@ const GRIPES: IGripe[] = [
          name: 'Angular',
          date: new Date('02/01/2019'),
          reference: 'www.google/.com',
+         tags: '#coding',
          body: 'hello hello',
          voters: ['peck', 'roy', 'joe', 'ju']
       }
@@ -114,6 +116,7 @@ const GRIPES: IGripe[] = [
          name: 'Angular',
          date: new Date('02/01/2019'),
          reference: 'www.google.com',
+         tags: '#something',
          body: 'hello hello',
          voters: ['peck', 'roy']
       }
@@ -131,6 +134,7 @@ const GRIPES: IGripe[] = [
          name: 'Angular',
          date: new Date('02/01/2019'),
          reference: 'www.google/com',
+         tags: '#hahaha',
          body: 'hello hello',
          voters: ['peck', 'roy', 'joe', 'ju', 'dans']
       }
@@ -149,6 +153,7 @@ const GRIPES: IGripe[] = [
          name: 'Angular',
          date: new Date('02/01/2019'),
          reference: 'www.google/com',
+         tags: '#moneymoney',
          body: 'hello hello',
          voters: ['peck', 'roy', 'joe'],
       }
@@ -167,6 +172,7 @@ const GRIPES: IGripe[] = [
          name: 'Angular',
          date: new Date('02/01/2019'),
          reference: 'www.google/com',
+         tags: '#UtahJazz',
          body: 'hello hello',
          voters: ['peck', 'roy', 'joe', 'ju', 'esus'],
       }

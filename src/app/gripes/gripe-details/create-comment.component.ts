@@ -30,7 +30,7 @@ export class CreateCommentComponent implements OnInit {
         this.name = new FormControl('', Validators.required);
         this.date = new FormControl('', Validators.required);
         this.reference = new FormControl('');
-        this.tags = new FormControl('');
+        this.tags = new FormControl('', Validators.required);
         this.body = new FormControl('', [Validators.required,
         Validators.maxLength(400), restrictedWords(['foo', 'bar'])
         ]);
