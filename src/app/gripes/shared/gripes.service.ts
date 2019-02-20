@@ -57,27 +57,27 @@ const GRIPES: IGripe[] = [
    comment: [
       {
          id: 1,
-         name: 'Angular',
+         name: 'Angular using TypeScript',
          date: new Date('02/01/2019'),
          reference: 'www.angular.com',
-         tags: '#helloworld',
+         tags: '#Angular',
          body: 'hello hello',
          voters: ['peck', 'roy', 'joe', 'ju']
       },
       {
          id: 2,
-         name: 'React',
+         name: 'React using JavaScript',
          date: new Date('02/01/2019'),
-         tags: '#hellomars',
+         tags: '#react',
          body: 'bye bye',
          voters: ['roy', 'joe', 'ju']
       },
       {
          id: 3,
-         name: 'Rails',
+         name: 'Ruby on Rails',
          date: new Date('02/01/2019'),
          reference: 'www.rails.com',
-         tags: '#yoyo',
+         tags: '#ruby',
          body: 'bye bye',
          voters: ['roy', 'joe', 'ju']
       }
